@@ -1,1 +1,64 @@
-hello
+<!doctype html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Горячев Владислав</title>
+    <link rel="icon" href="assets/favicon.ico" type="image/x-icon">
+    <link rel="stylesheet" href="styles/style.css">
+</head>
+<body>
+<header class="header">
+    <div class="header__brand">
+        <a href="index.html" class="header__logo">
+            <img src="assets/favicon.png" alt="Логотип сайта">
+        </a>
+        <h1 class="header__title">Горячев Владислав</h1>
+    </div>
+    <nav class="menu">
+        <a href="index.html" class="menu__item active">Главная</a>
+        <a href="pages/projects.html" class="menu__item">Проекты</a>
+        <a href="pages/diary.html" class="menu__item">Дневник</a>
+        <a href="pages/contacts.html" class="menu__item">Контакты</a>
+    </nav>
+</header>
+
+<main class="main">
+    <section class="intro-section">
+        <div class="intro__image">
+            <img src="images/avatar.png" alt="Фото Владислава">
+        </div>
+        <div class="intro__content">
+            <h2 class="intro__title">Добро пожаловать!</h2>
+            <p class="intro__subtitle">Студент группы ЭФБО-15-24</p>
+            <a href="assets/resume.pdf" class="button" download>Скачать резюме</a>
+        </div>
+    </section>
+
+    <section class="skills-section">
+        <h3 class="section__title">Навыки</h3>
+        <ul class="skills__list">
+            <li><span>Игра в доту</span><div class="bars" data-level="5"></div></li>
+            <li><span>Игра на морфлинге</span><div class="bars" data-level="3"></div></li>
+            <li><span>Игра на минёре</span><div class="bars" data-level="4"></div></li>
+            <li><span>Github</span><div class="bars" data-level="2"></div></li>
+        </ul>
+    </section>
+
+    <section class="achievements">
+        <h3 class="section__title">Мои достижения</h3>
+        <div class="cards">
+            <div class="card">10 000 MMR в Dota 2</div>
+            <div class="card">Матч против Дахака за выход на TI</div>
+            <div class="card">30 уровень на Морфлинге</div>
+        </div>
+    </section>
+</main>
+
+<footer class="footer">
+    <p>© 2025 Владислав Горячев. Все права защищены.</p>
+</footer>
+
+<script src="scripts/script.js"></script>
+</body>
+</html>

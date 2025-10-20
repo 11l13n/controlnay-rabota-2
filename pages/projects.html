@@ -1,0 +1,80 @@
+<!doctype html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Проекты — Владислав Горячев</title>
+    <link rel="stylesheet" href="../styles/style.css">
+    <link rel="icon" href="../assets/favicon.ico" type="image/x-icon">
+</head>
+<body>
+<header class="header">
+    <div class="header__brand">
+        <a href="../index.html" class="header__logo">
+            <img src="../assets/favicon.png" alt="Логотип">
+        </a>
+        <h1 class="header__title">Владислав Горячев</h1>
+    </div>
+    <nav class="menu">
+        <a href="../index.html" class="menu__item">Главная</a>
+        <a href="projects.html" class="menu__item active">Проекты</a>
+        <a href="diary.html" class="menu__item">Дневник</a>
+        <a href="contacts.html" class="menu__item">Контакты</a>
+    </nav>
+</header>
+
+<main class="main">
+    <section class="projects-section">
+        <h2 class="section__title">Мои проекты</h2>
+
+        <!-- фильтры -->
+        <div class="project-filters">
+            <button data-filter="all" class="active">Все</button>
+            <button data-filter="frontend">Frontend</button>
+            <button data-filter="python">Python</button>
+            <button data-filter="freelance">Фриланс</button>
+        </div>
+
+        <!-- карточки проектов -->
+        <div class="projects-grid">
+            <div class="project-card" data-category="frontend"
+                 onclick="openModal('Личный сайт', 'HTML, CSS', 'Пример интерфейса и адаптивной верстки', 'https://example.com', 'https://github.com/example')">
+                <h3>Личный сайт</h3>
+                <p>HTML, CSS</p>
+            </div>
+
+            <div class="project-card" data-category="python"
+                 onclick="openModal('Python Telegram Bot', 'Python, aiogram', 'Бот для Telegram с обработкой команд', '#', '#')">
+                <h3>Python</h3>
+                <p>Telegram Bot</p>
+            </div>
+
+            <div class="project-card" data-category="freelance"
+                 onclick="openModal('Фриланс-заказ', 'React, Node.js', 'Многостраничное приложение под заказ', '#', '#')">
+                <h3>Фриланс-заказ</h3>
+                <p>React, Node.js</p>
+            </div>
+        </div>
+    </section>
+</main>
+
+<footer class="footer">
+    <p>© 2025 Владислав Горячев. Все права защищены.</p>
+</footer>
+
+<div id="modal" class="modal">
+    <div class="modal-content">
+        <span class="close" onclick="closeModal()">&times;</span>
+        <h3 id="modal-title"></h3>
+        <p id="modal-tech"></p>
+        <div id="modal-screenshots"></div>
+        <p>
+            <a id="modal-live" href="#" target="_blank">Посмотреть</a> |
+            <a id="modal-code" href="#" target="_blank">Исходный код</a>
+        </p>
+    </div>
+</div>
+
+<script src="../scripts/script.js"></script>
+</body>
+</html>
