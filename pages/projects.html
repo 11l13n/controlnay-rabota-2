@@ -2,75 +2,104 @@
 <html lang="ru">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1, viewport-fit=cover">
     <title>Проекты — Владислав Горячев</title>
+    <meta name="description" content="Проекты Владислава Горячева — разработки, боты, фриланс и веб-приложения.">
     <link rel="stylesheet" href="../styles/style.css">
     <link rel="icon" href="../assets/favicon.ico" type="image/x-icon">
 </head>
+
 <body>
-<header class="header">
-    <div class="header__brand">
-        <a href="../index.html" class="header__logo">
-            <img src="../assets/favicon.png" alt="Логотип">
-        </a>
-        <h1 class="header__title">Владислав Горячев</h1>
-    </div>
-    <nav class="menu">
-        <a href="../index.html" class="menu__item">Главная</a>
-        <a href="projects.html" class="menu__item active">Проекты</a>
-        <a href="diary.html" class="menu__item">Дневник</a>
-        <a href="contacts.html" class="menu__item">Контакты</a>
-    </nav>
-</header>
+<a class="skip-link" href="#main">Перейти к основному содержимому</a>
 
-<main class="main">
-    <section class="projects-section">
-        <h2 class="section__title">Мои проекты</h2>
-
-        <!-- фильтры -->
-        <div class="project-filters">
-            <button data-filter="all" class="active">Все</button>
-            <button data-filter="frontend">Frontend</button>
-            <button data-filter="python">Python</button>
-            <button data-filter="freelance">Фриланс</button>
+<div class="page">
+    <header class="header" role="banner">
+        <div class="header__brand">
+            <a href="../index.html" class="header__logo">
+                <img src="../assets/favicon.png"
+                     alt="Логотип сайта"
+                     width="52" height="52">
+            </a>
+            <h1 class="header__title">Владислав Горячев</h1>
         </div>
 
-        <!-- карточки проектов -->
-        <div class="projects-grid">
-            <div class="project-card" data-category="frontend"
-                 onclick="openModal('Личный сайт', 'HTML, CSS', 'Пример интерфейса и адаптивной верстки', 'https://example.com', 'https://github.com/example')">
-                <h3>Личный сайт</h3>
-                <p>HTML, CSS</p>
+        <nav class="menu" aria-label="Основная навигация">
+            <a href="../index.html" class="menu__item">Главная</a>
+            <a href="projects.html" class="menu__item active" aria-current="page">Проекты</a>
+            <a href="diary.html" class="menu__item">Дневник</a>
+            <a href="contacts.html" class="menu__item">Контакты</a>
+        </nav>
+    </header>
+
+    <main class="main" id="main">
+        <section class="projects-section" aria-labelledby="projects-title">
+            <h2 class="section__title" id="projects-title">Мои проекты</h2>
+
+            <!-- Фильтры -->
+            <div class="project-filters" role="tablist" aria-label="Фильтр проектов">
+                <button data-filter="all" class="active" role="tab" aria-selected="true">Все</button>
+                <button data-filter="frontend" role="tab" aria-selected="false">Frontend</button>
+                <button data-filter="python" role="tab" aria-selected="false">Python</button>
+                <button data-filter="freelance" role="tab" aria-selected="false">Фриланс</button>
             </div>
 
-            <div class="project-card" data-category="python"
-                 onclick="openModal('Python Telegram Bot', 'Python, aiogram', 'Бот для Telegram с обработкой команд', '#', '#')">
-                <h3>Python</h3>
-                <p>Telegram Bot</p>
+            <!-- Карточки проектов -->
+            <div class="projects-grid">
+                <article class="project-card"
+                         data-category="frontend"
+                         tabindex="0"
+                         onclick="openModal('Личный сайт', 'HTML, CSS', 'Адаптивный сайт-портфолио', 'https://example.com', 'https://github.com/example')">
+                    <h3>Личный сайт</h3>
+                    <p>HTML, CSS</p>
+                </article>
+
+                <article class="project-card"
+                         data-category="python"
+                         tabindex="0"
+                         onclick="openModal('Telegram Bot', 'Python, Aiogram', 'Телеграм-бот с командами и логикой', '#', '#')">
+                    <h3>Telegram Bot</h3>
+                    <p>Python, Aiogram</p>
+                </article>
+
+                <article class="project-card"
+                         data-category="freelance"
+                         tabindex="0"
+                         onclick="openModal('Фриланс-заказ', 'React, Node.js', 'Многостраничное приложение под заказ', '#', '#')">
+                    <h3>Фриланс-заказ</h3>
+                    <p>React, Node.js</p>
+                </article>
             </div>
+        </section>
+    </main>
 
-            <div class="project-card" data-category="freelance"
-                 onclick="openModal('Фриланс-заказ', 'React, Node.js', 'Многостраничное приложение под заказ', '#', '#')">
-                <h3>Фриланс-заказ</h3>
-                <p>React, Node.js</p>
-            </div>
-        </div>
-    </section>
-</main>
+    <footer class="footer">
+        <p>© 2025 Владислав Горячев. Все права защищены.</p>
+    </footer>
+</div>
 
-<footer class="footer">
-    <p>© 2025 Владислав Горячев. Все права защищены.</p>
-</footer>
+<!-- Доступная модалка -->
+<div id="modal"
+     class="modal"
+     role="dialog"
+     aria-modal="true"
+     aria-labelledby="modal-title"
+     tabindex="-1">
 
-<div id="modal" class="modal">
     <div class="modal-content">
-        <span class="close" onclick="closeModal()">&times;</span>
+        <button class="close"
+                aria-label="Закрыть окно"
+                onclick="closeModal()">
+            &times;
+        </button>
+
         <h3 id="modal-title"></h3>
         <p id="modal-tech"></p>
         <div id="modal-screenshots"></div>
+
         <p>
-            <a id="modal-live" href="#" target="_blank">Посмотреть</a> |
-            <a id="modal-code" href="#" target="_blank">Исходный код</a>
+            <a id="modal-live" href="#" target="_blank" rel="noopener">Посмотреть</a> |
+            <a id="modal-code" href="#" target="_blank" rel="noopener">Исходный код</a>
         </p>
     </div>
 </div>

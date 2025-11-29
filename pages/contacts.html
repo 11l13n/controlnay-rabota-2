@@ -2,46 +2,75 @@
 <html lang="ru">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1, viewport-fit=cover">
     <title>Контакты — Владислав Горячев</title>
+    <meta name="description" content="Контакты Владислава Горячева: форма обратной связи и ссылки.">
     <link rel="stylesheet" href="../styles/style.css">
     <link rel="icon" href="../assets/favicon.ico" type="image/x-icon">
 </head>
+
 <body>
-<header class="header">
-    <div class="header__brand">
-        <a href="../index.html" class="header__logo"><img src="../assets/favicon.png" alt="Логотип"></a>
-        <h1 class="header__title">Владислав Горячев</h1>
-    </div>
-    <nav class="menu">
-        <a href="../index.html" class="menu__item">Главная</a>
-        <a href="projects.html" class="menu__item">Проекты</a>
-        <a href="diary.html" class="menu__item">Дневник</a>
-        <a href="contacts.html" class="menu__item active">Контакты</a>
-    </nav>
-</header>
+<a class="skip-link" href="#main">Перейти к основному содержимому</a>
 
-<main class="main">
-    <section class="contact-form">
-        <h2>Свяжитесь со мной</h2>
-        <form id="contactForm" novalidate>
-            <label>Имя:<input type="text" name="name" required></label>
-            <label>Email:<input type="email" name="email" required></label>
-            <label>Сообщение:<textarea name="message" rows="5" required></textarea></label>
-            <button type="submit" class="button">Отправить</button>
-        </form>
-
-        <div class="contact-info">
-            <p>📧 gvp142@gmail.com</p>
-            <p>📱 GitHub: <a href="https://github.com/11l13n" target="_blank">11l13n</a></p>
-            <p>📍 Москва, Россия</p>
+<div class="page">
+    <header class="header" role="banner">
+        <div class="header__brand">
+            <a href="../index.html" class="header__logo">
+                <img src="../assets/favicon.png"
+                     alt="Логотип сайта"
+                     width="52" height="52">
+            </a>
+            <h1 class="header__title">Владислав Горячев</h1>
         </div>
-    </section>
-</main>
 
-<footer class="footer">
-    <p>© 2025 Владислав Горячев. Все права защищены.</p>
-</footer>
+        <nav class="menu" aria-label="Основная навигация">
+            <a href="../index.html" class="menu__item">Главная</a>
+            <a href="projects.html" class="menu__item">Проекты</a>
+            <a href="diary.html" class="menu__item">Дневник</a>
+            <a href="contacts.html" class="menu__item active" aria-current="page">Контакты</a>
+        </nav>
+    </header>
+
+    <main class="main" id="main">
+        <section class="contact-form" aria-labelledby="contact-title">
+            <h2 id="contact-title">Свяжитесь со мной</h2>
+
+            <form id="contactForm" novalidate>
+                <label for="name">
+                    Имя
+                </label>
+                <input type="text" id="name" name="name" required
+                       autocomplete="name">
+
+                <label for="email">
+                    Email
+                </label>
+                <input type="email" id="email" name="email" required
+                       autocomplete="email">
+
+                <label for="message">
+                    Сообщение
+                </label>
+                <textarea id="message" name="message" rows="5" required></textarea>
+
+                <button type="submit" class="button">
+                    Отправить
+                </button>
+            </form>
+
+            <div class="contact-info">
+                <p>📧 <a href="mailto:gvp142@gmail.com">gvp142@gmail.com</a></p>
+                <p>📱 GitHub: <a href="https://github.com/11l13n" target="_blank" rel="noopener">11l13n</a></p>
+                <p>📍 Москва, Россия</p>
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <p>© 2025 Владислав Горячев. Все права защищены.</p>
+    </footer>
+</div>
 
 <script src="../scripts/script.js"></script>
 </body>

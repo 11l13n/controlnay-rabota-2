@@ -2,48 +2,71 @@
 <html lang="ru">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1, viewport-fit=cover">
     <title>Дневник — Владислав Горячев</title>
+    <meta name="description" content="Дневник Владислава Горячева: записи и список пройденных курсов.">
     <link rel="stylesheet" href="../styles/style.css">
     <link rel="icon" href="../assets/favicon.ico" type="image/x-icon">
 </head>
+
 <body>
-<header class="header">
-    <div class="header__brand">
-        <a href="../index.html" class="header__logo"><img src="../assets/favicon.png" alt="Логотип"></a>
-        <h1 class="header__title">Владислав Горячев</h1>
-    </div>
-    <nav class="menu">
-        <a href="../index.html" class="menu__item">Главная</a>
-        <a href="projects.html" class="menu__item">Проекты</a>
-        <a href="diary.html" class="menu__item active">Дневник</a>
-        <a href="contacts.html" class="menu__item">Контакты</a>
-    </nav>
-</header>
+<a class="skip-link" href="#main">Перейти к основному содержимому</a>
 
-<main class="main">
-    <section class="diary-section">
-        <h2 class="section__title">Мой дневник</h2>
-        <ul class="timeline">
-            <li><strong>11 июля</strong> — Играл в доту ✓</li>
-            <li><strong>22 июля</strong> — Играл в доту</li>
-            <li><strong>28 сентября</strong> — Играл в доту</li>
-            <li><strong>13 октября</strong> — Играл в доту</li>
-        </ul>
+<div class="page">
+    <header class="header" role="banner">
+        <div class="header__brand">
+            <a href="../index.html" class="header__logo">
+                <img src="../assets/favicon.png"
+                     alt="Логотип сайта"
+                     width="52" height="52">
+            </a>
+            <h1 class="header__title">Владислав Горячев</h1>
+        </div>
 
-        <h3 class="section__title">Курсы</h3>
-        <ul class="skills__list">
-            <li><span>2 курс</span><div class="bars" data-level="3"></div></li>
-            <li><span>Курс по доте</span><div class="bars" data-level="4"></div></li>
-        </ul>
+        <nav class="menu" aria-label="Основная навигация">
+            <a href="../index.html" class="menu__item">Главная</a>
+            <a href="projects.html" class="menu__item">Проекты</a>
+            <a href="diary.html" class="menu__item active" aria-current="page">Дневник</a>
+            <a href="contacts.html" class="menu__item">Контакты</a>
+        </nav>
+    </header>
 
-        <button class="button" id="addEntry">Добавить запись</button>
-    </section>
-</main>
+    <main class="main" id="main">
+        <section class="diary-section" aria-labelledby="diary-title">
+            <h2 class="section__title" id="diary-title">Мой дневник</h2>
 
-<footer class="footer">
-    <p>© 2025 Владислав Горячев. Все права защищены.</p>
-</footer>
+            <ul class="timeline">
+                <li><strong>11 июля</strong> — Играл в доту ✓</li>
+                <li><strong>22 июля</strong> — Играл в доту</li>
+                <li><strong>28 сентября</strong> — Играл в доту</li>
+                <li><strong>13 октября</strong> — Играл в доту</li>
+            </ul>
+
+            <section aria-labelledby="courses-title">
+                <h3 class="section__title" id="courses-title">Курсы</h3>
+                <ul class="skills__list">
+                    <li>
+                        <span>2 курс</span>
+                        <div class="bars" data-level="3" aria-hidden="true"></div>
+                    </li>
+                    <li>
+                        <span>Курс по доте</span>
+                        <div class="bars" data-level="4" aria-hidden="true"></div>
+                    </li>
+                </ul>
+            </section>
+
+            <button class="button" id="addEntry" type="button">
+                Добавить запись
+            </button>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <p>© 2025 Владислав Горячев. Все права защищены.</p>
+    </footer>
+</div>
 
 <script src="../scripts/script.js"></script>
 </body>
